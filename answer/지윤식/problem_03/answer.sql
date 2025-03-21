@@ -1,0 +1,1 @@
+select * from employee where DEPT_CODE = 'D9';
