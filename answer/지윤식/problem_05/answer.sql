@@ -1,0 +1,3 @@
+select EMP_NAME, DEPT_CODE, SALARY
+from EMPLOYEE
+where DEPT_CODE = 'D6' and SALARY > 2000000;
