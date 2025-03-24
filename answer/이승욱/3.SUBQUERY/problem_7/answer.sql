@@ -1,0 +1,8 @@
+-- 7. 자기 직급의 평균 급여를 받고 있는 직원의 사번, 이름, 직급코드, 급여를 조회하세요.
+SELECT EMP_ID, EMP_NAME, JOB_CODE, SALARY
+FROM EMPLOYEE E1
+WHERE ROUND(SALARY, -5) = (
+    SELECT ROUND(AVG(SALARY), -5)
+    FROM EMPLOYEE E2
+    WHERE E1.JOB_CODE = E2.JOB_CODE
+);

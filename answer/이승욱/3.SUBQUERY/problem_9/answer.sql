@@ -1,0 +1,2 @@
+-- 1. EMPLOYEE테이블에서 모든 정보를 조회
+SELECT * FROM EMPLOYEE;
