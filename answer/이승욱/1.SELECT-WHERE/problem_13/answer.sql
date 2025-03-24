@@ -1,0 +1,4 @@
+-- 13. 이씨성이 아닌 직원의 사번, 이름, 이메일주소를 조회
+SELECT EMP_ID, EMP_NAME, EMAIL
+FROM EMPLOYEE
+WHERE EMP_NAME NOT LIKE '이%';
