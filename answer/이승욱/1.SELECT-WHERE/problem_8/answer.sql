@@ -1,0 +1,4 @@
+-- 8. 성이 김씨인 직원의 사번, 이름, 입사일을 조회
+SELECT EMP_ID, EMP_NAME, HIRE_DATE
+FROM EMPLOYEE
+WHERE EMP_NAME LIKE '김%';

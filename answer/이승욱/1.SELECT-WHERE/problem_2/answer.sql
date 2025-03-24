@@ -1,0 +1,2 @@
+-- 2. EMPLOYEE 테이블의 사번, 이름을 조회
+SELECT EMP_ID, EMP_NAME FROM EMPLOYEE;
