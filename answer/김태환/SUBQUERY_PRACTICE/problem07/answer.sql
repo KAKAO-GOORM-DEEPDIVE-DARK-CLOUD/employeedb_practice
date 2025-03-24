@@ -1,0 +1,13 @@
+WITH SalaryDifference AS (
+    SELECT EMP_ID, EMP_NAME, JOB_CODE, SALARY,
+           ABS(ROUND(SALARY, -5) -
+               (SELECT ROUND(AVG(SALARY), -5) FROM EMPLOYEE WHERE JOB_CODE = E.JOB_CODE)) AS Diff
+    FROM EMPLOYEE E
+)
+SELECT EMP_ID, EMP_NAME, JOB_CODE, SALARY
+FROM (
+         SELECT EMP_ID, EMP_NAME, JOB_CODE, SALARY,
+                ROW_NUMBER() OVER (PARTITION BY JOB_CODE ORDER BY Diff ASC) AS rn
+         FROM SalaryDifference
+     ) AS RankedEmployees
+WHERE rn = 1;
