@@ -1,0 +1,8 @@
+SELECT E.EMP_ID AS '사번', E.EMP_NAME AS '이름', E.JOB_CODE AS '직급코드', E.SALARY AS '급여'
+FROM EMPLOYEE E
+         JOIN (SELECT JOB_CODE, round(AVG(SALARY), -5) AS 평균
+               FROM EMPLOYEE
+               GROUP BY JOB_CODE
+) AS AVG_TABLE
+              ON E.JOB_CODE = AVG_TABLE.JOB_CODE
+WHERE ROUND(E.SALARY, -5) = AVG_TABLE.평균;
