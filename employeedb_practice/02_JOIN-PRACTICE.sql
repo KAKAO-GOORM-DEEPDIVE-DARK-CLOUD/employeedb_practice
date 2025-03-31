@@ -2,8 +2,9 @@
 
 -- 1. 직급이 대리이면서 아시아 지역에 근무하는 직원의 사번, 이름, 직급명, 부서명, 지역명, 급여를 조회하세요
 
-SELECT e.`EMP_ID`, e.
-FROM employee AS e, job AS j
+SELECT e.`EMP_ID`, e.`EMP_NAME`, j.JOB_NAME, 
+FROM EMPLOYEE AS e, job AS JOB, `LOCATION` AS l, DEPARTMENT AS d 
+JOIN e.JOB_CODE = j.JOBCODE and d.DEPT_ID = e.DEPT_ID and 
 WHERE e.
  
 -- 2. 주민번호가 70년대 생이면서 성별이 여자이고, 성이 전씨인 직원의 이름, 주민등록번호, 부서명, 직급명을 조회하세요.

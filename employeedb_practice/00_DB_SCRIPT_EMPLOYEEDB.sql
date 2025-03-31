@@ -59,7 +59,7 @@ CREATE TABLE `EMPLOYEE`
     `EMP_NO`    CHAR(14) NOT NULL COMMENT '주민등록번호',
     `EMAIL`    VARCHAR(35) COMMENT '이메일',
     `PHONE`    VARCHAR(12) COMMENT '전화번호',
-    `DEPT_CODE`    CHAR(2) COMMENT '부서코드',
+    `DEPT_ID`    CHAR(2) COMMENT '부서코드',
     `JOB_CODE`    CHAR(2) NOT NULL COMMENT '직급코드',
     `SAL_LEVEL`    CHAR(2) NOT NULL COMMENT '급여등급',
     `SALARY`    DECIMAL COMMENT '급여',
